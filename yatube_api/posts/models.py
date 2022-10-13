@@ -51,9 +51,10 @@ class Follow(models.Model):
                              help_text='Ссылка на объект пользователя, '
                                        'который подписывается')
     following = models.ForeignKey(User, verbose_name='Автор',
-                               on_delete=models.CASCADE, related_name='following',
-                               help_text='Ссылка на объект пользователя, '
-                                         'на которого подписываются')
+                                  on_delete=models.CASCADE,
+                                  related_name='following',
+                                  help_text='Ссылка на объект пользователя, '
+                                            'на которого подписываются')
 
     class Meta:
         verbose_name = 'Подписка'
