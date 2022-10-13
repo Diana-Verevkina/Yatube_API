@@ -1,23 +1,31 @@
+## API Yatube
+### Описание:
+Программа представляет из себя API для социальной сети Yatube, с помощью 
+которого можно публиковать и редактировать записи и 
+просматривать посты других пользователей. Реализованы механизм комментариев 
+к записям, возможность подписки на публикации интересующий авторов и 
+регистрация пользователей.
+
 ### Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-https://github.com/boreesych/kittygram_backend.git
+https://github.com/Diana-Verevkina/api_final_yatube
 ```
 
 ```
-cd kittygram_backend
+cd yatube_api
 ```
 
 Cоздать и активировать виртуальное окружение:
 
 ```
-python3 -m venv env
+python3 -m venv venv
 ```
 
 ```
-source env/bin/activate
+source venv/bin/activate
 ```
 
 ```
@@ -41,3 +49,7 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
+
+### Документация:
+
+http://127.0.0.1:8000/redoc/

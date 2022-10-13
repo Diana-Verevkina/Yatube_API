@@ -30,6 +30,9 @@ class Post(models.Model):
         related_name='posts', blank=True, null=True
     )
 
+    class Meta:
+        ordering = ['pub_date']
+
     def __str__(self):
         return self.text
 
@@ -61,7 +64,11 @@ class Follow(models.Model):
         verbose_name_plural = 'Подписки'
         constraints = [
             models.UniqueConstraint(fields=['user', 'following'],
-                                    name='user_following')
+                                    name='user_following'),
+            models.CheckConstraint(
+                name="%(app_label)s_%(class)s_prevent_self_follow",
+                check=~models.Q(from_user=models.F("to_user")),
+            ),
         ]
 
     def __str__(self):
